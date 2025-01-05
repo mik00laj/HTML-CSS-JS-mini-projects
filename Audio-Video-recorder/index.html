@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/1946f486ca.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/css/style.min.css">
+  <title>Audio/Video Studio </title>
+</head>
+
+<body>
+  <section class="audio">
+    <div class="wrapper">
+      <i class="fa-solid fa-music fa-beat  music music--one"></i>
+      <i class="fa-solid fa-music fa-beat  music music--two"></i>
+      <i class="fa-solid fa-music fa-beat  music music--three"></i>
+      <i class="fa-solid fa-music fa-beat  music music--four"></i>
+
+      <h1 class="audio__header header">Audio recorder <i class="fa-solid fa-volume-high"></i></h1>
+
+      <section class="main-controls">
+        <canvas class="visualizer"></canvas>
+
+        <div id="buttons">
+          <button class="record audio__btn button">Record <i class="fa-solid fa-microphone"></i></button>
+          <button class="stop audio__btn button">Stop<i class="fa-solid fa-microphone-slash"></i></button>
+        </div>
+
+        <div class="effects">
+          <button class="filter audio__btn button">Low-pass filter </button>
+          <button class="change-levels audio__btn button">Change Levels </button>
+        </div>
+
+        <h2 class="audio__info-one">Przetwarzanie plików audio działa na ostanio nagrany plik! </h2>
+        <p class="audio__info-two">Na jeden plik audio można zastosować tylko jeden efekt! - wybierz efekt i odsłuchaj
+          zmodyfkowany plik audio</p>
+
+      </section>
+      <section class="sound-clips"></section>
+    </div>
+  </section>
+
+
+
+  <section class="video">
+    <div class="wrapper ">
+
+      <h1 class="video__header header">
+        MediaRecorder <i class="fa-solid fa-video"></i>
+      </h1>
+
+      <div class="video__box">
+        <video class="video__camera-box" id="gum" playsinline autoplay muted></video>
+        <video class="video__camera-box" id="recorded" playsinline loop></video>
+      </div>
+
+
+      <div class="video__btns">
+        <button class="video__btn button" id="start">Start camera</button>
+        <button class="video__btn button" id="record" disabled>Start Recording</button>
+        <button class="video__btn button" id="play" disabled>Play</button>
+        <button class="video__btn button" id="download" disabled>Download</button>
+      </div>
+
+      <div class="video__format">
+        Recording format: <select id="codecPreferences" disabled></select>
+      </div>
+
+      <div class="">
+        Special effects:
+        <button class="video__btn button filter1" id="filter1">Add Grayscale</button>
+        <button class="video__btn button filter2" id="filter2">Add Contrast</button>
+        <button class="video__btn button filter3" id="filter3">Add Saturation</button>
+        <button class="video__btn button filter4" id="filter4">Add Brightness</button>
+        <button class="video__btn button filter5" id="filter5">Add Invertion</button>
+      </div>
+
+      <canvas id="my-canvas" width="1280" height="720"></canvas>
+
+      <div>
+        <p><input type="checkbox" id="echoCancellation"></p>
+      </div>
+
+      <div>
+        <span id="errorMsg"></span>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="./dist/js/script.min.js" async></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+</body>
+
+</html>

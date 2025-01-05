@@ -1,0 +1,246 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	width: 100%;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 80%;
+	height: 100vh;
+	margin: 0 auto;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-color: #d9e4f5;
+	background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.music{
+	position: relative;
+	&--one{
+		top:400px;
+		left: -100px;
+		font-size: 80px;
+	}
+	&--two{
+		top:50px;
+		left: 1100px;
+		font-size: 80px;
+		
+	}
+	&--three{
+		top:50px;
+		left: -100px;
+		font-size: 40px;
+		
+	}
+	&--four{
+		top:380px;
+		left: 1100px;
+		font-size: 30px;
+		
+	}
+
+}
+
+.main-controls {
+	padding: 10px 0;
+}
+
+canvas {
+	display: block;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+#buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.button {
+		font-size: 12px;
+		padding: 12px;
+		width: calc(50% - 5px);
+	}
+}
+
+.button {
+	font-size: 12px;
+	background: #0088cc;
+	text-align: center;
+	color: white;
+	border: none;
+	transition: all 0.2s;
+	padding: 10px;
+
+	&:hover,
+	&:focus {
+		box-shadow: inset 0px 0px 10px rgb(255, 255, 255);
+		background: #0ae;
+		cursor: pointer;
+	}
+	&:active {
+		box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+		transform: translateY(2px);
+	}
+}
+
+.effects {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	.filter {
+		margin-right: 20px;
+	}
+}
+
+.sound-clips {
+	flex: 1;
+	overflow: auto;
+}
+
+section,
+article {
+	display: block;
+}
+
+audio {
+	width: 100%;
+	display: block;
+	margin: 10px auto 5px;
+}
+
+.clip {
+	padding-bottom: 10px;
+	p {
+		display: inline-block;
+		font-size: 20px;
+	}
+	button {
+		font-size: 20px;
+		float: right;
+	}
+	p {
+		cursor: pointer;
+	}
+}
+
+button.delete {
+	background: #f00;
+	padding: 8px 20px;
+	font-size: 12px;
+	cursor: pointer;
+}
+button.download {
+	background: green;
+	padding: 8px 20px;
+	font-size: 12px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+label {
+	font-size: 30px;
+	position: absolute;
+	top: 2px;
+	right: 3px;
+	z-index: 5;
+	cursor: pointer;
+	background-color: black;
+	border-radius: 10px;
+}
+
+aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translateX(100%);
+	transition: 0.3s all ease-out;
+	background-color: #efefef;
+	padding: 10px;
+
+	p {
+		font-size: 20px;
+		margin: 6px 0;
+	}
+	a {
+		color: #666;
+	}
+}
+
+input[type='checkbox'] {
+	position: absolute;
+	top: -100px;
+}
+/* Toggled State of information box */
+input[type='checkbox']:checked ~ aside {
+	transform: translateX(0);
+}
+
+.header {
+	font-size: 75px;
+	font-family: 'Libre Baskerville';
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+
+.audio {
+	&__info-one {
+		text-align: center;
+		font-family: 'Libre Baskerville';
+		padding: 10px 0 0 0;
+	}
+	&__info-two {
+		text-align: center;
+		font-size: 15px;
+		color: red;
+		font-weight: bold;
+	}
+}
+
+.video {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+	}
+	&__camera-box {
+		background: #222;
+		margin: 2em 1em;
+		width: 50%;
+	}
+
+	&__btns {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__btn {
+		padding: 1em 2em;
+		margin: 0 1em;
+	}
+
+	&__format {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1em 1em;
+	}
+}
